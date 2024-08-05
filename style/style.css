@@ -161,7 +161,7 @@ span {
   display: inline-block;
   padding: 1rem 2.8rem;
   background-color: black;
-  border-radius: 4rem;
+  border-radius: 6px;
   color: #c576f6;
   letter-spacing: 0.3rem;
   font-weight: 600;
@@ -214,8 +214,9 @@ span {
 
 .section-head {
   text-align: center;
-  padding: 10px;
-  width: 15vw;
+  /* width: 15vw; */
+  width: fit-content;
+  padding: 15px 50px;
   border: 2px solid #c576f6;
   border-radius: 1rem;
   margin: auto;
@@ -280,6 +281,8 @@ span {
 
 /* project */
 
+/* project */
+
 .project-list {
   width: 80vw;
   display: grid;
@@ -304,8 +307,8 @@ span {
 
 .layer {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.6), #333);
+  height: 0; /* Initially height is 0 */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #333);
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -336,7 +339,9 @@ span {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list:hover img {
@@ -347,5 +352,19 @@ span {
   height: 100%;
 }
 
+.project-see-more {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 2px solid #c576f6;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #c576f6;
+  transition: background 0.5s;
+}
 
-
+.project-see-more:hover {
+  background-color: #c576f6;
+  color: white;
+}
