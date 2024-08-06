@@ -1,8 +1,8 @@
-gsap.from("#img", {
-  x: 100,
-  opacity: 0,
-  rotate: 360,
-});
+// gsap.from("#img", {
+//   x: 100,
+//   opacity: 0,
+//   rotate: 360,
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
     const progressBars = document.querySelectorAll(".progress-bar");

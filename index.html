@@ -15,22 +15,23 @@
   <body>
     <header>
       <nav>
-        <div class="navbar">
+        <div class="navbar" id="navbar">
           <div class="div-nav" id="div-nav-1">
             <a href="#" class="logo">HIRANMOY</a>
           </div>
           <div class="div-nav" id="div-nav-2">
-            <div><a href="#">HOME</a></div>
-            <div><a href="#">SKILLS</a></div>
-            <div><a href="#">EDUCATION</a></div>
-            <div><a href="#">PROJECT</a></div>
-            <div><a href="#">CONTACT</a></div>
+            <div><a href="#home">HOME</a></div>
+            <div><a href="#skills">SKILLS</a></div>
+            <div><a href="#education">EDUCATION</a></div>
+            <div><a href="#project">PROJECT</a></div>
+            <div><a href="#contact-container">CONTACT</a></div>
           </div>
+          <div class="menu-icon" id="menu-icon">&#9776;</div>
         </div>
       </nav>
     </header>
 
-    <section class="home">
+    <section class="home" id="home">
       <div class="home-img">
         <img
           id="img"
@@ -54,11 +55,11 @@
           <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <a href="#" class="btn">Hire Me</a>
+        <a href="#contact-container" class="btn">Hire Me</a>
       </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
       <div class="skills-head skills-1 section-head"><h1>SKILLS</h1></div>
       <div class="skills-content skills-1">
         <div class="bar">
@@ -120,7 +121,7 @@
       </div>
     </section>
 
-    <section class="education">
+    <section class="education" id="education">
       <div class="section-head"><h1>EDUCATION</h1></div>
       <div class="edu-main">
         <div class="edu-content">
@@ -160,7 +161,7 @@
         </div>
       </div>
     </section>
-    <section class="project">
+    <section class="project" id="project">
       <div class="section-head"><h1>project</h1></div>
       <div class="project-list">
         <div class="list">
@@ -237,18 +238,55 @@
       </div>
       <a href="#" class="project-see-more" id="see-more-btn">See more</a>
     </section>
+
+    <section class="contact-container" id="contact-container">
+      <div class="section-head"><h1>contact me</h1></div>
+      <div class="contact">
+        <div class="contact-div" id="contact-first">
+          <i class="fa-solid fa-house"></i>
+          <span class="contact-label contact-me">Address:</span>
+          <p class="contact-text contact-me">
+            Nandakumar, Purba Medinipur, WB-721632
+          </p>
+          <div class="contact-div" id="contact-mid">
+            <i class="fa-solid fa-phone"></i>
+            <span class="contact-label contact-me">Phone:</span>
+            <p class="contact-text contact-me">+91 7602753550</p>
+          </div>
+          <div class="contact-div" id="contact-last">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="contact-label contact-me">Email:</span>
+            <p class="contact-text contact-me">hiran.maiti@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document
+        .getElementById("see-more-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          const hiddenProjects = document.querySelectorAll(".hidden-projects");
+          hiddenProjects.forEach((project) => {
+            project.classList.remove("hidden-projects");
+          });
+          this.style.display = "none";
+        });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.getElementById("menu-icon");
+        const navbar = document.getElementById("navbar");
+
+        if (menuIcon && navbar) {
+          // Ensure elements are found
+          menuIcon.addEventListener("click", function () {
+            navbar.classList.toggle("open");
+          });
+        } else {
+          console.error("Menu icon or navbar not found");
+        }
+      });
+    </script>
   </body>
 </html>
-
-<script>
-  document
-    .getElementById("see-more-btn")
-    .addEventListener("click", function (event) {
-      event.preventDefault();
-      const hiddenProjects = document.querySelectorAll(".hidden-projects");
-      hiddenProjects.forEach((project) => {
-        project.classList.remove("hidden-projects");
-      });
-      this.style.display = "none";
-    });
-</script>

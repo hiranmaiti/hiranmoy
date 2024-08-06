@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 18px;
   background-color: black;
@@ -16,16 +20,24 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 25px;
+  padding: 20px;
   color: white;
   background-color: black;
   z-index: 100;
   position: fixed;
+  border-bottom: 1px solid #333;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  border-bottom: 1px solid #333;
+
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  max-height: 60px; /* Default height */
+}
+
+.navbar.open {
+  max-height: 500px; /* Expanded height */
 }
 
 .div-nav {
@@ -57,6 +69,61 @@ body {
 a {
   text-decoration: none;
 }
+
+section::before {
+  content: '';
+  display: block;
+  height: 60px;
+  margin-top: -60px;
+  visibility: hidden;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .div-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    line-height: 2;
+    padding: 4px;
+  }
+
+  .div-nav a {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar.open .div-nav {
+    display: flex;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .div-nav a {
+    font-size: 1rem; /* Adjust for smaller screens */
+  }
+
+  .menu-icon {
+    font-size: 1.2rem; /* Adjust for smaller screens */
+  }
+}
+
 
 /* section --- home */
 
@@ -389,5 +456,98 @@ span {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.contact {
+  width: 45vw;
+  border: 2px solid #c576f6;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 6px;
+  padding: 25px;
+}
+
+.contact div {
+  margin-top: 40px;
+}
+
+.contact-text {
+  font-weight: lighter;
+}
+
+#contact-last {
+  margin-bottom: 40px;
+}
+
+.contact-div {
+  line-height: 1.5;
+}
+
+.contact-div i {
+  margin-right: 10px;
+}
+
+.contact-div span {
+  color: white;
+}
+
+.contact-div p {
+  margin-left: 32px;
+}
+
+@media (max-width: 768px) {
+  .section-head h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact {
+    width: 90%;
+  }
+
+  .contact-div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-div i {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-label {
+    font-size: 1rem;
+  }
+
+  .contact-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-head h1 {
+    font-size: 1.2rem;
+  }
+
+  .contact {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .contact-div {
+    margin-bottom: 1rem;
+  }
+
+  .contact-div i {
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .contact-label {
+    font-size: 0.9rem;
+  }
+
+  .contact-text {
+    font-size: 0.8rem;
   }
 }
