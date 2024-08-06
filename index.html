@@ -10,7 +10,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="script.js"></script>
-    <title>Protfolio</title>
+    <title>Portfolio</title>
   </head>
   <body>
     <header>
@@ -202,8 +202,53 @@
             ></a>
           </div>
         </div>
+
+        <!-- New project items to be revealed -->
+        <div class="list hidden-projects">
+          <img src="" alt="" />
+          <div class="layer">
+            <h3>New Project 1</h3>
+            <p>Description for new project 1.</p>
+            <a href="#"
+              ><i class="fa-solid fa-arrow-up-right-from-square"></i
+            ></a>
+          </div>
+        </div>
+        <div class="list hidden-projects">
+          <img src="" alt="" />
+          <div class="layer">
+            <h3>New Project 2</h3>
+            <p>Description for new project 2.</p>
+            <a href="#"
+              ><i class="fa-solid fa-arrow-up-right-from-square"></i
+            ></a>
+          </div>
+        </div>
+        <div class="list hidden-projects">
+          <img src="" alt="" />
+          <div class="layer">
+            <h3>New Project 3</h3>
+            <p>Description for new project 3.</p>
+            <a href="#"
+              ><i class="fa-solid fa-arrow-up-right-from-square"></i
+            ></a>
+          </div>
+        </div>
       </div>
-      <a href="#" class="project-see-more">See more</a>
+      <a href="#" class="project-see-more" id="see-more-btn">See more</a>
     </section>
   </body>
 </html>
+
+<script>
+  document
+    .getElementById("see-more-btn")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      const hiddenProjects = document.querySelectorAll(".hidden-projects");
+      hiddenProjects.forEach((project) => {
+        project.classList.remove("hidden-projects");
+      });
+      this.style.display = "none";
+    });
+</script>

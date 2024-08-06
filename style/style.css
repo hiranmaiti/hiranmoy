@@ -296,15 +296,18 @@ span {
   position: relative;
   overflow: hidden;
   height: 350px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .list img {
   width: 100%;
   border-radius: 10px;
   display: block;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.5s;
 }
-
 .layer {
   width: 100%;
   height: 0; /* Initially height is 0 */
@@ -367,4 +370,24 @@ span {
 .project-see-more:hover {
   background-color: #c576f6;
   color: white;
+}
+
+/* Add the necessary CSS rules */
+.hidden-projects {
+  display: none;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
