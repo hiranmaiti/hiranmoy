@@ -556,11 +556,9 @@ span {
 
 
 @media screen and (max-width: 1024px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  #div-nav-2 {
+    margin-right: 40px;
   }
-
   .logo {
     text-align: center;
     width: 100%;
