@@ -71,7 +71,7 @@ a {
 }
 
 section::before {
-  content: '';
+  content: "";
   display: block;
   height: 60px;
   margin-top: -60px;
@@ -86,44 +86,44 @@ section::before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .div-nav {
     display: none;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
     background-color: black;
     line-height: 2;
     padding: 4px;
+    width: 100%;
+  }
+
+  #div-nav-2 {
+    justify-content: left;
+    align-items: flex-start;
   }
 
   .div-nav a {
     margin: 10px 0;
     text-align: center;
-  }
-
-  .navbar {
-    flex-direction: column;
+    color: white;
   }
 
   .menu-icon {
     display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white; /* Ensure the menu icon is visible */
+    margin-bottom: 10px; /* Add some space between the menu icon and the nav items */
   }
 
   .navbar.open .div-nav {
     display: flex;
   }
 }
-
-/* Very Small Screens */
-@media (max-width: 480px) {
-  .div-nav a {
-    font-size: 1rem; /* Adjust for smaller screens */
-  }
-
-  .menu-icon {
-    font-size: 1.2rem; /* Adjust for smaller screens */
-  }
-}
-
 
 /* section --- home */
 
@@ -548,6 +548,85 @@ span {
   }
 
   .contact-text {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    text-align: center;
+    width: 100%;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-img {
+    margin: 0 0 20px 0;
+  }
+
+  .home-img img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .home-img img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .home-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .home-content .typing-text {
+    font-size: 1.2rem;
+  }
+
+  .home-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .menu-icon {
+    font-size: 1rem;
+  }
+
+  .home-img img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .home-content h1 {
+    font-size: 1.2rem;
+  }
+
+  .home-content .typing-text {
+    font-size: 1rem;
+  }
+
+  .home-content p {
     font-size: 0.8rem;
   }
 }
