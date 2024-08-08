@@ -64,11 +64,34 @@ body {
   color: white;
   font-size: 1.2rem;
   text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 a {
   text-decoration: none;
 }
+
+.div-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #c576f6;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.div-nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: #c576f6;
+}
+
+
 
 section::before {
   content: "";
