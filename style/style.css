@@ -53,6 +53,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  transition: none;
 }
 
 #div-nav-2 {
