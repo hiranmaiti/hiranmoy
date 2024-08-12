@@ -136,12 +136,19 @@ section::before {
     color: white;
   }
 
+  .navbar {
+    border-bottom: 0;
+  }
+
   .menu-icon {
     display: block;
     font-size: 2rem;
     cursor: pointer;
     color: white; /* Ensure the menu icon is visible */
     margin-bottom: 10px; /* Add some space between the menu icon and the nav items */
+    position: fixed;
+    top: 10px;
+    left: 10px;
   }
 
   .navbar.open .div-nav {
@@ -232,21 +239,25 @@ span {
   width: 4rem;
   height: 4rem;
   background-color: transparent;
-  border: 0.2rem solid #c576f6;
+  border: 2px solid #c576f6;
   font-size: 2rem;
   border-radius: 50%;
   margin: 3rem 1.5rem 3rem;
-  transition: 0.3s ease;
+  transition: background 0.5s;
 }
 .fa-brands {
   color: #333;
 }
 
+.fa-brands:hover {
+  color: white;
+}
+
 .social-icon a:hover {
   color: white;
-  transform: scale(1.3) translateY(-5px);
+  /* transform: scale(1.3) translateY(-5px); */
   background-color: #c576f6;
-  box-shadow: 0 0 25px #c576f6;
+  /* box-shadow: 0 0 25px #c576f6; */
 }
 
 .btn {
@@ -258,15 +269,13 @@ span {
   letter-spacing: 0.3rem;
   font-weight: 600;
   border: 2px solid #c576f6;
-  transition: 0.3s ease;
+  transition: background 0.5s;
   cursor: pointer;
 }
 
 .btn:hover {
-  transform: scale3d(1.03);
   background-color: #c576f6;
   color: white;
-  box-shadow: 0 0 25px #c576f6;
 }
 
 .typing-text {
